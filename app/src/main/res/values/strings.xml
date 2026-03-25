@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">MonTheWeb</string>
+
+    <!-- Navigation -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="settings">Settings</string>
+
+    <!-- URL List -->
+    <string name="add_url">Add URL</string>
+    <string name="edit_url">Edit URL</string>
+    <string name="drag_to_reorder">Drag to reorder</string>
+    <string name="empty_state_title">No URLs monitored</string>
+    <string name="empty_state_subtitle">Add a URL to start monitoring</string>
+
+    <!-- Add/Edit Form Fields -->
+    <string name="field_name">Name</string>
+    <string name="field_url">URL</string>
+    <string name="field_scrape_interval">Scrape interval</string>
+    <string name="field_timeout">Timeout</string>
+    <string name="field_expected_http_code">Expected HTTP code</string>
+    <string name="field_expected_content">Expected content</string>
+    <string name="field_expected_content_hint">Case-sensitive substring match (leave empty to skip)</string>
+    <string name="field_name_required">Name is required</string>
+    <string name="field_url_required">URL is required</string>
+    <string name="optional_settings">Optional Settings</string>
+    <string name="minutes_suffix">min</string>
+    <string name="seconds_suffix">sec</string>
+
+    <!-- Settings -->
+    <string name="settings_description">Default values for new URL monitors. These can be overridden per URL.</string>
+    <string name="field_default_scrape_interval">Default scrape interval</string>
+    <string name="field_default_timeout">Default timeout</string>
+    <string name="field_default_http_code">Default expected HTTP code</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">URL Monitor Alerts</string>
+    <string name="notification_channel_description">Alerts when monitored URLs fail checks</string>
+    <string name="notification_alert_title">%1$s - Alert</string>
+</resources>

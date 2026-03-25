@@ -1,0 +1,21 @@
+MonTheWeb is a simple, open-source URL monitoring app. Add web URLs to a watchlist and MonTheWeb checks them in the background at configurable intervals. When a check fails, you get a red status indicator in the app and a system notification.
+
+Features:
+
+* Background monitoring at configurable intervals, even after device reboot
+* Per-URL settings: scrape interval, timeout, expected HTTP status code, expected content (case-sensitive match)
+* Automatic alerts with system notifications on failure; alerts clear when the URL recovers
+* Retry logic: 5 attempts with 5-second delays before raising an alert
+* Drag-and-drop reordering of your URL list
+* Pull-to-refresh to manually trigger checks
+* Global default settings for interval, timeout, and expected HTTP code
+* Material 3 design with adaptive icon
+* No tracking, no ads, no telemetry
+
+MonTheWeb is useful for anyone who wants to keep an eye on websites, APIs, or services from their phone — sysadmins, developers, or anyone who needs to know when a site goes down.
+
+Permissions:
+- Internet: check URLs
+- Background execution: periodic checks
+- Boot completed: restart monitoring after reboot
+- Notifications: alert on failures

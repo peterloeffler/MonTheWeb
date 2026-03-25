@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Globe -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M54,24C37.43,24 24,37.43 24,54C24,70.57 37.43,84 54,84C70.57,84 84,70.57 84,54C84,37.43 70.57,24 54,24ZM54,80C39.64,80 28,68.36 28,54C28,39.64 39.64,28 54,28C68.36,28 80,39.64 80,54C80,68.36 68.36,80 54,80Z"/>
+
+    <!-- Horizontal line -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M26,52L82,52L82,56L26,56Z"/>
+
+    <!-- Vertical ellipse -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M54,24C47.37,24 42,37.43 42,54C42,70.57 47.37,84 54,84C60.63,84 66,70.57 66,54C66,37.43 60.63,24 54,24ZM54,80C49.58,80 46,68.36 46,54C46,39.64 49.58,28 54,28C58.42,28 62,39.64 62,54C62,68.36 58.42,80 54,80Z"/>
+
+    <!-- Signal pulse - top right -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M72,32C72,32 76,28 76,28"
+        android:strokeWidth="2.5"
+        android:strokeColor="@android:color/white"
+        android:fillType="nonZero"/>
+
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M70,38A18,18 0,0 1,78 30"
+        android:strokeWidth="2.5"
+        android:strokeColor="@android:color/white"
+        android:fillAlpha="0"/>
+
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M72,44A26,26 0,0 1,84 32"
+        android:strokeWidth="2.5"
+        android:strokeColor="@android:color/white"
+        android:fillAlpha="0"/>
+
+</vector>

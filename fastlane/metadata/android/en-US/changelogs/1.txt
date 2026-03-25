@@ -1,0 +1,9 @@
+Initial release of MonTheWeb.
+
+- Monitor web URLs in the background
+- Configurable per-URL: interval, timeout, expected HTTP code, expected content
+- System notifications on failure
+- Drag-and-drop reordering
+- Pull-to-refresh
+- Material 3 design with adaptive icon
+- Boot persistence

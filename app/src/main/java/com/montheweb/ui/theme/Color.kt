@@ -55,4 +55,5 @@ val md_theme_dark_outline = Color(0xFF89938F)
 // Status colors
 val StatusGreen = Color(0xFF2E7D32)
 val StatusRed = Color(0xFFC62828)
-val AlertBackground = Color(0x1AC62828)
+val AlertBackgroundLight = Color(0xFFFCE4E4)
+val AlertBackgroundDark = Color(0xFF3B1C1C)

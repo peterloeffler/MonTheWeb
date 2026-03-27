@@ -27,7 +27,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.montheweb.R
 import com.montheweb.data.db.MonitoredUrl
-import com.montheweb.ui.theme.AlertBackground
+import androidx.compose.foundation.isSystemInDarkTheme
+import com.montheweb.ui.theme.AlertBackgroundDark
+import com.montheweb.ui.theme.AlertBackgroundLight
 import com.montheweb.ui.theme.StatusGreen
 import com.montheweb.ui.theme.StatusRed
 import java.text.SimpleDateFormat
@@ -42,7 +44,7 @@ fun UrlListItem(
     modifier: Modifier = Modifier
 ) {
     val containerColor = if (url.isAlerted) {
-        AlertBackground
+        if (isSystemInDarkTheme()) AlertBackgroundDark else AlertBackgroundLight
     } else {
         MaterialTheme.colorScheme.surface
     }

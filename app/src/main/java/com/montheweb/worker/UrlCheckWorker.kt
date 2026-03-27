@@ -41,36 +41,42 @@ class UrlCheckWorker(
         val monitoredUrl = dao.getUrlById(urlId) ?: return@withContext Result.failure()
         val notificationHelper = NotificationHelper(applicationContext)
 
-        val client = OkHttpClient.Builder()
-            .connectTimeout(monitoredUrl.timeoutSeconds.toLong(), TimeUnit.SECONDS)
-            .readTimeout(monitoredUrl.timeoutSeconds.toLong(), TimeUnit.SECONDS)
-            .writeTimeout(monitoredUrl.timeoutSeconds.toLong(), TimeUnit.SECONDS)
-            .followRedirects(true)
-            .followSslRedirects(true)
-            .build()
+        dao.setChecking(urlId, true)
 
-        var lastError: String? = null
+        try {
+            val client = OkHttpClient.Builder()
+                .connectTimeout(monitoredUrl.timeoutSeconds.toLong(), TimeUnit.SECONDS)
+                .readTimeout(monitoredUrl.timeoutSeconds.toLong(), TimeUnit.SECONDS)
+                .writeTimeout(monitoredUrl.timeoutSeconds.toLong(), TimeUnit.SECONDS)
+                .followRedirects(true)
+                .followSslRedirects(true)
+                .build()
 
-        for (attempt in 1..MAX_RETRIES) {
-            when (val result = performCheck(client, monitoredUrl)) {
-                is CheckResult.Success -> {
-                    markRecovered(dao, notificationHelper, urlId)
-                    lastError = null
-                    break
-                }
-                is CheckResult.Failed -> {
-                    lastError = result.error
-                    if (attempt < MAX_RETRIES) {
-                        delay(RETRY_DELAY_MS)
+            var lastError: String? = null
+
+            for (attempt in 1..MAX_RETRIES) {
+                when (val result = performCheck(client, monitoredUrl)) {
+                    is CheckResult.Success -> {
+                        markRecovered(dao, notificationHelper, urlId)
+                        lastError = null
+                        break
+                    }
+                    is CheckResult.Failed -> {
+                        lastError = result.error
+                        if (attempt < MAX_RETRIES) {
+                            delay(RETRY_DELAY_MS)
+                        }
                     }
                 }
             }
-        }
 
-        // Only alert if all retries failed
-        if (lastError != null) {
-            markAlert(dao, notificationHelper, urlId, monitoredUrl.name,
-                "$lastError (after $MAX_RETRIES attempts)")
+            // Only alert if all retries failed
+            if (lastError != null) {
+                markAlert(dao, notificationHelper, urlId, monitoredUrl.name,
+                    "$lastError (after $MAX_RETRIES attempts)")
+            }
+        } finally {
+            dao.setChecking(urlId, false)
         }
 
         // Self-reschedule: queue the next check after the configured interval

@@ -32,6 +32,9 @@ interface MonitoredUrlDao {
     @Query("UPDATE monitored_urls SET isAlerted = :isAlerted, lastCheckTime = :lastCheckTime, lastError = :lastError WHERE id = :id")
     suspend fun updateCheckResult(id: Long, isAlerted: Boolean, lastCheckTime: Long, lastError: String?)
 
+    @Query("UPDATE monitored_urls SET isChecking = :isChecking WHERE id = :id")
+    suspend fun setChecking(id: Long, isChecking: Boolean)
+
     @Query("SELECT MAX(sortOrder) FROM monitored_urls")
     suspend fun getMaxSortOrder(): Int?
 

@@ -15,6 +15,7 @@ data class MonitoredUrl(
     val expectedContent: String? = null,
     val sortOrder: Int = 0,
     val isAlerted: Boolean = false,
+    val isChecking: Boolean = false,
     val lastCheckTime: Long? = null,
     val lastError: String? = null
 )

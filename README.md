@@ -15,6 +15,16 @@ A simple, open-source Android app for monitoring web URLs. Add URLs to a watchli
 - **Adaptive icon** — Follows your device's icon shape and color scheme
 - **No tracking, no ads** — Fully open source, no telemetry
 
+## Screenshots
+
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="250" alt="URL list light theme">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="250" alt="Settings light theme">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="250" alt="Add URL light theme">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="250" alt="URL list dark theme">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="250" alt="Edit URL dark theme">
+</p>
+
 ## Installation
 
 ### F-Droid
